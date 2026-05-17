@@ -4,20 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Empresas URA LLC | Tierra · Raíz · Valor</title>
-  <meta name="description" content="Empresas URA LLC: tierra empresarial para propiedades, servicios, tecnología e inversiones." />
+  <meta name="description" content="Empresas URA LLC es la tierra empresarial donde se siembran, organizan y hacen crecer propiedades, servicios, tecnología e inversiones." />
 
   <style>
     :root {
       --green-950: #07120f;
       --green-900: #0f241d;
       --green-800: #17352a;
+      --green-700: #1f4a39;
       --gold-500: #b9975b;
       --gold-300: #d8c08a;
       --ivory: #f8f3e8;
       --cream: #efe5cf;
       --muted: #cfc4ad;
-      --dark-text: #10241d;
-      --line: rgba(185, 151, 91, 0.35);
+      --line: rgba(216, 192, 138, 0.34);
       --shadow: 0 28px 90px rgba(0, 0, 0, 0.36);
     }
 
@@ -28,9 +28,478 @@
     }
 
     html {
+      min-height: 100%;
       scroll-behavior: smooth;
+      background: var(--green-950);
     }
 
     body {
       min-height: 100vh;
-      font-family: Inter, ui-s
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ivory);
+      background:
+        radial-gradient(circle at 20% 18%, rgba(216, 192, 138, 0.18), transparent 28%),
+        radial-gradient(circle at 82% 14%, rgba(31, 74, 57, 0.75), transparent 34%),
+        linear-gradient(135deg, var(--green-950), var(--green-900) 48%, #08100d);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.18;
+      background-image:
+        linear-gradient(rgba(216, 192, 138, 0.12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(216, 192, 138, 0.12) 1px, transparent 1px);
+      background-size: 64px 64px;
+      mask-image: linear-gradient(to bottom, black, transparent 82%);
+    }
+
+    .page {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 28px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--green-950);
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      background:
+        radial-gradient(circle at 35% 25%, #fff2c5, var(--gold-300) 38%, var(--gold-500) 72%);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.55);
+    }
+
+    .brand-copy strong {
+      display: block;
+      font-size: 0.98rem;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+    }
+
+    .brand-copy span {
+      display: block;
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover {
+      color: var(--ivory);
+    }
+
+    .hero {
+      min-height: calc(100vh - 104px);
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 54px;
+      align-items: center;
+      padding: 34px 0 72px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--gold-300);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 9px 14px;
+      background: rgba(7, 18, 15, 0.52);
+      backdrop-filter: blur(12px);
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gold-300);
+      box-shadow: 0 0 18px rgba(216, 192, 138, 0.7);
+    }
+
+    h1 {
+      margin-top: 26px;
+      font-size: clamp(3rem, 8vw, 7.4rem);
+      line-height: 0.9;
+      letter-spacing: -0.07em;
+    }
+
+    .hero h1 span {
+      display: block;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(248, 243, 232, 0.64);
+      text-shadow: none;
+    }
+
+    .lead {
+      margin-top: 28px;
+      max-width: 660px;
+      color: var(--cream);
+      font-size: clamp(1.08rem, 1.65vw, 1.36rem);
+      line-height: 1.7;
+    }
+
+    .lead strong {
+      color: var(--gold-300);
+      font-weight: 700;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 0 20px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+    }
+
+    .button.primary {
+      color: #08100d;
+      background: linear-gradient(135deg, var(--gold-300), var(--gold-500));
+      box-shadow: 0 16px 34px rgba(185, 151, 91, 0.23);
+    }
+
+    .button.secondary {
+      color: var(--ivory);
+      border: 1px solid var(--line);
+      background: rgba(248, 243, 232, 0.06);
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .visual-card {
+      position: relative;
+      min-height: 560px;
+      border: 1px solid var(--line);
+      border-radius: 36px;
+      background:
+        linear-gradient(180deg, rgba(248, 243, 232, 0.11), rgba(248, 243, 232, 0.035)),
+        rgba(7, 18, 15, 0.68);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      backdrop-filter: blur(18px);
+    }
+
+    .visual-card::before {
+      content: "";
+      position: absolute;
+      width: 440px;
+      height: 440px;
+      left: 50%;
+      top: 46%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 38% 30%, rgba(255, 248, 216, 0.92), rgba(216, 192, 138, 0.82) 26%, rgba(185, 151, 91, 0.45) 48%, rgba(23, 53, 42, 0.06) 70%);
+      filter: drop-shadow(0 36px 60px rgba(0, 0, 0, 0.38));
+    }
+
+    .root-lines {
+      position: absolute;
+      inset: 0;
+      opacity: 0.55;
+      background:
+        linear-gradient(135deg, transparent 45%, rgba(216, 192, 138, 0.32) 46%, transparent 47%),
+        linear-gradient(45deg, transparent 54%, rgba(216, 192, 138, 0.20) 55%, transparent 56%);
+      mask-image: radial-gradient(circle at 50% 46%, black 0 32%, transparent 68%);
+    }
+
+    .ura-seal {
+      position: absolute;
+      left: 50%;
+      top: 46%;
+      transform: translate(-50%, -50%);
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      color: #0a1511;
+      border: 1px solid rgba(255, 244, 204, 0.75);
+      background:
+        radial-gradient(circle at 34% 24%, #fff6cf, #d8c08a 35%, #b9975b 72%, #806339);
+      box-shadow: inset 0 3px 7px rgba(255, 255, 255, 0.36), inset 0 -14px 28px rgba(69, 48, 22, 0.22), 0 34px 70px rgba(0, 0, 0, 0.34);
+    }
+
+    .ura-seal b {
+      display: block;
+      font-size: 4.8rem;
+      line-height: 0.9;
+      letter-spacing: -0.08em;
+    }
+
+    .ura-seal small {
+      display: block;
+      margin-top: 14px;
+      font-weight: 900;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .floating-note {
+      position: absolute;
+      right: 28px;
+      bottom: 28px;
+      width: min(300px, calc(100% - 56px));
+      padding: 22px;
+      border-radius: 24px;
+      border: 1px solid rgba(216, 192, 138, 0.34);
+      color: var(--cream);
+      background: rgba(7, 18, 15, 0.78);
+      backdrop-filter: blur(16px);
+      line-height: 1.55;
+    }
+
+    .floating-note strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--gold-300);
+      font-size: 0.9rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .pill-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      padding: 0 0 72px;
+    }
+
+    .pill {
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 18px;
+      min-height: 108px;
+      background: rgba(248, 243, 232, 0.06);
+    }
+
+    .pill strong {
+      display: block;
+      color: var(--gold-300);
+      margin-bottom: 8px;
+      font-size: 1.02rem;
+    }
+
+    .pill span {
+      color: var(--muted);
+      line-height: 1.5;
+      font-size: 0.94rem;
+    }
+
+    footer {
+      border-top: 1px solid rgba(216, 192, 138, 0.22);
+      padding: 26px 0 36px;
+      color: rgba(248, 243, 232, 0.62);
+      font-size: 0.92rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 900px) {
+      header {
+        align-items: flex-start;
+        gap: 20px;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding-top: 28px;
+      }
+
+      .visual-card {
+        min-height: 440px;
+      }
+
+      .ura-seal {
+        width: 220px;
+        height: 220px;
+      }
+
+      .ura-seal b {
+        font-size: 4rem;
+      }
+
+      .pill-row {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 560px) {
+      .page {
+        width: min(100% - 28px, 1180px);
+      }
+
+      .brand-copy strong {
+        font-size: 0.88rem;
+      }
+
+      .hero {
+        gap: 34px;
+      }
+
+      .lead {
+        font-size: 1rem;
+      }
+
+      .actions {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .visual-card {
+        min-height: 390px;
+        border-radius: 28px;
+      }
+
+      .floating-note {
+        left: 18px;
+        right: 18px;
+        bottom: 18px;
+        width: auto;
+      }
+
+      .pill-row {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <a class="brand" href="#top" aria-label="Empresas URA LLC">
+        <div class="brand-mark">URA</div>
+        <div class="brand-copy">
+          <strong>Empresas URA LLC</strong>
+          <span>Tierra · Raíz · Valor</span>
+        </div>
+      </a>
+      <nav aria-label="Secciones principales">
+        <a href="#esencia">Esencia</a>
+        <a href="#activos">Activos</a>
+        <a href="mailto:info@empresaura.llc">Contacto</a>
+      </nav>
+    </header>
+
+    <main id="top" class="hero">
+      <section aria-labelledby="hero-title">
+        <div class="eyebrow">Base empresarial en Puerto Rico</div>
+        <h1 id="hero-title">Empresas URA <span>LLC</span></h1>
+        <p class="lead">
+          <strong>URA significa tierra.</strong> Empresas URA LLC es la tierra empresarial donde se siembran, organizan y hacen crecer distintos activos: propiedades, servicios, tecnología e inversiones.
+        </p>
+        <p class="lead">
+          Representa la base firme que sostiene cada proyecto y convierte trabajo, conocimiento y recursos en valor real.
+        </p>
+        <div class="actions">
+          <a class="button primary" href="#esencia">Ver esencia URA</a>
+          <a class="button secondary" href="#activos">Explorar áreas</a>
+        </div>
+      </section>
+
+      <section class="visual-card" aria-label="Sello visual de URA">
+        <div class="root-lines" aria-hidden="true"></div>
+        <div class="ura-seal">
+          <div>
+            <b>URA</b>
+            <small>Tierra fértil</small>
+          </div>
+        </div>
+        <div class="floating-note" id="esencia">
+          <strong>La idea central</strong>
+          Una base sólida donde cada esfuerzo se organiza, echa raíces y se transforma en valor duradero.
+        </div>
+      </section>
+    </main>
+
+    <section id="activos" class="pill-row" aria-label="Áreas de Empresas URA">
+      <article class="pill">
+        <strong>Propiedades</strong>
+        <span>Activos físicos organizados con visión de crecimiento y estabilidad.</span>
+      </article>
+      <article class="pill">
+        <strong>Servicios</strong>
+        <span>Operaciones que convierten conocimiento y ejecución en valor real.</span>
+      </article>
+      <article class="pill">
+        <strong>Tecnología</strong>
+        <span>Sistemas, automatización y herramientas que fortalecen la operación.</span>
+      </article>
+      <article class="pill">
+        <strong>Inversiones</strong>
+        <span>Recursos sembrados con disciplina para producir crecimiento sostenible.</span>
+      </article>
+    </section>
+
+    <footer>
+      <span>© <span id="year">2026</span> Empresas URA LLC. Todos los derechos reservados.</span>
+      <span>Puerto Rico · Tierra empresarial</span>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
